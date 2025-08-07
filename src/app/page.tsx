@@ -178,7 +178,7 @@ export default function Home() {
                 <li>Refinamiento de tu estilo personal</li>
               </ul>
               <div className="module-result">
-                <strong>Resultado:</strong> "Improvisas con intención musical, no solo notas correctas"
+                <strong>Resultado:</strong> &ldquo;Improvisas con intención musical, no solo notas correctas&rdquo;
               </div>
             </div>
 
@@ -194,7 +194,7 @@ export default function Home() {
                 <li>Desarrollo de tu huella personal</li>
               </ul>
               <div className="module-result">
-                <strong>Resultado:</strong> "Tus solos tienen estructura, narrativa y personalidad"
+                <strong>Resultado:</strong> &ldquo;Tus solos tienen estructura, narrativa y personalidad&rdquo;
               </div>
             </div>
 
@@ -210,7 +210,7 @@ export default function Home() {
                 <li>Pulido final de tu identidad musical</li>
               </ul>
               <div className="module-result">
-                <strong>Resultado:</strong> "Cierras con una identidad musical única y definida"
+                <strong>Resultado:</strong> &ldquo;Cierras con una identidad musical única y definida&rdquo;
               </div>
             </div>
           </div>
@@ -256,7 +256,7 @@ export default function Home() {
             <div className="testimonial-card">
               <div className="testimonial-avatar">MG</div>
               <div className="testimonial-content">
-                <p>"Con FRET GPS finalmente entendí cómo conectar la teoría con lo que realmente quería expresar. Ahora improviso con confianza y cada solo tiene mi personalidad."</p>
+                <p>&ldquo;Con FRET GPS finalmente entendí cómo conectar la teoría con lo que realmente quería expresar. Ahora improviso con confianza y cada solo tiene mi personalidad.&rdquo;</p>
                 <div className="testimonial-author">
                   <strong>María G.</strong>
                   <span>🇲🇽 México</span>
@@ -267,7 +267,7 @@ export default function Home() {
             <div className="testimonial-card">
               <div className="testimonial-avatar">CR</div>
               <div className="testimonial-content">
-                <p>"El enfoque por módulos me ayudó a ordenar mi aprendizaje. No más práctica sin rumbo. Cada semana sabía exactamente qué trabajar y veía mi progreso."</p>
+                <p>&ldquo;El enfoque por módulos me ayudó a ordenar mi aprendizaje. No más práctica sin rumbo. Cada semana sabía exactamente qué trabajar y veía mi progreso.&rdquo;</p>
                 <div className="testimonial-author">
                   <strong>Carlos R.</strong>
                   <span>🇦🇷 Argentina</span>
@@ -278,7 +278,7 @@ export default function Home() {
             <div className="testimonial-card">
               <div className="testimonial-avatar">AL</div>
               <div className="testimonial-content">
-                <p>"Lo que más me gustó fue el feedback constante. Lautaro me ayudó a desarrollar mi propia voz, no a copiar la de otros. Ahora toco con mi identidad."</p>
+                <p>&ldquo;Lo que más me gustó fue el feedback constante. Lautaro me ayudó a desarrollar mi propia voz, no a copiar la de otros. Ahora toco con mi identidad.&rdquo;</p>
                 <div className="testimonial-author">
                   <strong>Ana L.</strong>
                   <span>🇨🇴 Colombia</span>
@@ -583,7 +583,7 @@ export default function Home() {
           <div className="footer-section">
             <h4>Contacto</h4>
             <ul>
-              <li>📱 WhatsApp: +54 9 11 XXXX-XXXX</li>
+              <li>📱 WhatsApp: +54 9 11 3406-0511</li>
               <li>📧 Email: lautaro@ejemplo.com</li>
               <li>🌎 Toda América Latina</li>
               <li>⏰ Lun-Vie 9:00-18:00 (ARG)</li>
@@ -594,7 +594,7 @@ export default function Home() {
         <div className="footer-bottom">
           <p>&copy; 2025 Lautaro Scaglione. Todos los derechos reservados. | Formación EMPA Certificada</p>
           <p style={{fontSize: '0.9rem', opacity: 0.8, marginTop: '0.5rem'}}>
-            "No se trata de tocar notas correctas, se trata de encontrar TU manera de contarle algo al mundo con la guitarra."
+            &ldquo;No se trata de tocar notas correctas, se trata de encontrar TU manera de contarle algo al mundo con la guitarra.&rdquo;
           </p>
         </div>
       </footer>
