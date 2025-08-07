@@ -38,7 +38,7 @@ export default function Home() {
           <h1>Visualiza el Mástil e Improvisa con Fluidez</h1>
           <p>Transforma tu forma de tocar con un método estructurado de 3 módulos que combina entrenamiento mental, práctica contextualizada y desarrollo de tu voz única como improvisador.</p>
           <div className="hero-buttons">
-            <button className="cta-button" onClick={() => window.open('https://wa.me/5491123456789?text=Hola%20Lautaro!%20Me%20interesa%20el%20programa%20FRET%20GPS%20y%20me%20gustar%C3%ADa%20agendar%20una%20evaluaci%C3%B3n%20gratuita.', '_blank')}>
+            <button className="cta-button" onClick={() => window.open('https://wa.me/5491134060511?text=Hola%20Lautaro!%20Me%20interesa%20el%20programa%20FRET%20GPS%20y%20me%20gustar%C3%ADa%20agendar%20una%20evaluaci%C3%B3n%20gratuita.', '_blank')}>
               🎸 Evaluación FRET GPS Gratis
             </button>
             <button className="cta-button secondary" onClick={() => document.getElementById('method')?.scrollIntoView({behavior: 'smooth'})}>
@@ -424,7 +424,7 @@ export default function Home() {
                 <li>Clases grabadas incluidas</li>
                 <li>Soporte WhatsApp 24/7</li>
               </ul>
-              <button className="pricing-button" onClick={() => window.open('https://wa.me/5491123456789?text=Hola%20Lautaro!%20Me%20interesa%20un%20m%C3%B3dulo%20individual%20del%20programa%20FRET%20GPS.', '_blank')}>
+              <button className="pricing-button" onClick={() => window.open('https://wa.me/5491134060511?text=Hola%20Lautaro!%20Me%20interesa%20un%20m%C3%B3dulo%20individual%20del%20programa%20FRET%20GPS.', '_blank')}>
                 Elegir Módulo
               </button>
               <div className="pricing-note">Recomendado para base sólida</div>
@@ -440,7 +440,7 @@ export default function Home() {
                 <li>Todos los materiales incluidos</li>
                 <li>Soporte continuo</li>
               </ul>
-              <button className="pricing-button" onClick={() => window.open('https://wa.me/5491123456789?text=Hola%20Lautaro!%20Me%20interesa%20el%20plan%20mensual%20del%20programa%20FRET%20GPS.', '_blank')}>
+              <button className="pricing-button" onClick={() => window.open('https://wa.me/5491134060511?text=Hola%20Lautaro!%20Me%20interesa%20el%20plan%20mensual%20del%20programa%20FRET%20GPS.', '_blank')}>
                 Comenzar Ahora
               </button>
               <div className="pricing-note">Total: $1,500 USD</div>
@@ -460,7 +460,7 @@ export default function Home() {
                 <li>Masterclass grupal mensual</li>
                 <li>Certificado de finalización</li>
               </ul>
-              <button className="pricing-button featured" onClick={() => window.open('https://wa.me/5491123456789?text=Hola%20Lautaro!%20Me%20interesa%20el%20programa%20FRET%20GPS%20completo.%20Quiero%20comenzar%20mi%20transformaci%C3%B3n.', '_blank')}>
+              <button className="pricing-button featured" onClick={() => window.open('https://wa.me/5491134060511?text=Hola%20Lautaro!%20Me%20interesa%20el%20programa%20FRET%20GPS%20completo.%20Quiero%20comenzar%20mi%20transformaci%C3%B3n.', '_blank')}>
                 🚀 COMENZAR AHORA
               </button>
               <div className="pricing-note">Garantía 30 días</div>
@@ -495,7 +495,7 @@ export default function Home() {
           <p className="urgency-text">
             Próxima cohorte hasta Mayo 2025. No pierdas esta oportunidad de transformar tu improvisación.
           </p>
-          <button className="urgency-button" onClick={() => window.open('https://wa.me/5491123456789?text=Hola%20Lautaro!%20Quiero%20reservar%20mi%20cupo%20para%20la%20cohorte%20de%20Marzo%20del%20programa%20FRET%20GPS.', '_blank')}>
+          <button className="urgency-button" onClick={() => window.open('https://wa.me/5491134060511?text=Hola%20Lautaro!%20Quiero%20reservar%20mi%20cupo%20para%20la%20cohorte%20de%20Marzo%20del%20programa%20FRET%20GPS.', '_blank')}>
             RESERVAR MI CUPO AHORA
           </button>
         </section>
@@ -514,7 +514,7 @@ export default function Home() {
               <span className="contact-icon">🎸</span>
               <h3>Evaluación Gratuita</h3>
               <p>30 minutos para evaluar tu nivel y diseñar tu plan FRET GPS personalizado</p>
-              <button className="contact-button" onClick={() => window.open('https://wa.me/5491123456789?text=Hola%20Lautaro!%20Me%20interesa%20agendar%20una%20evaluaci%C3%B3n%20gratuita%20para%20el%20programa%20FRET%20GPS.', '_blank')}>
+              <button className="contact-button" onClick={() => window.open('https://wa.me/5491134060511?text=Hola%20Lautaro!%20Me%20interesa%20agendar%20una%20evaluaci%C3%B3n%20gratuita%20para%20el%20programa%20FRET%20GPS.', '_blank')}>
                 Agendar Evaluación
               </button>
             </div>
@@ -523,7 +523,7 @@ export default function Home() {
               <span className="contact-icon">💬</span>
               <h3>WhatsApp Directo</h3>
               <p>Habla conmigo directamente para resolver cualquier duda sobre FRET GPS</p>
-              <button className="contact-button" onClick={() => window.open('https://wa.me/5491123456789?text=Hola%20Lautaro!%20Tengo%20algunas%20preguntas%20sobre%20el%20programa%20FRET%20GPS.', '_blank')}>
+              <button className="contact-button" onClick={() => window.open('https://wa.me/5491134060511?text=Hola%20Lautaro!%20Tengo%20algunas%20preguntas%20sobre%20el%20programa%20FRET%20GPS.', '_blank')}>
                 Escribir Ahora
               </button>
             </div>
@@ -601,7 +601,7 @@ export default function Home() {
 
       {/* WhatsApp Float Button */}
       <a
-        href={`https://wa.me/5491123456789?text=${encodeURIComponent('Hola Lautaro! Vengo de tu web y me interesa información sobre el programa FRET GPS.')}`}
+        href={`https://wa.me/5491134060511?text=${encodeURIComponent('Hola Lautaro! Vengo de tu web y me interesa información sobre el programa FRET GPS.')}`}
         className="whatsapp-float"
         target="_blank"
         rel="noopener noreferrer"
