@@ -143,15 +143,6 @@ const nextConfig: NextConfig = {
       };
     }
 
-    // Alias para importaciones más limpias
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '@': require('path').resolve(__dirname, 'src'),
-      '@/components': require('path').resolve(__dirname, 'src/components'),
-      '@/lib': require('path').resolve(__dirname, 'src/lib'),
-      '@/app': require('path').resolve(__dirname, 'src/app'),
-    };
-
     return config;
   },
 
@@ -183,13 +174,6 @@ const nextConfig: NextConfig = {
       ? 'https://lautaroscaglione.com' 
       : 'http://localhost:3000',
   },
-
-  // Configuración para análisis de bundle
-  ...(process.env.ANALYZE === 'true' && {
-    experimental: {
-      bundlePagesRouterDependencies: true,
-    }
-  }),
 };
 
 export default nextConfig;
