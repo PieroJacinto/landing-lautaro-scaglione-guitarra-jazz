@@ -13,38 +13,38 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FRET GPS - Lautaro Scaglione | Visualiza el Mástil e Improvisa con Fluidez",
-  description: "Programa FRET GPS: Sistema completo de 3 módulos para dominar la improvisación en jazz. Plan personalizado, videos customizados y soporte 24/7 con Lautaro Scaglione, formación EMPA.",
-  keywords: "guitarra jazz, improvisación, FRET GPS, Lautaro Scaglione, clases guitarra online, EMPA, jazz guitar, América Latina",
+  title: "Programa FRET GPS - Lautaro Scaglione | Desarrolla tu Voz en la Improvisación",
+  description: "¿Ya tocas escalas pero siempre suenas igual? Programa FRET GPS para guitarristas intermedios que quieren desarrollar su propia voz en la improvisación. Formación EMPA. Evaluación gratuita.",
+  keywords: "improvisación guitarra, guitarristas intermedios, clases jazz online, FRET GPS, Lautaro Scaglione, EMPA, desarrollar voz musical, escalas pentatónicas, arpegios jazz",
   authors: [{ name: "Lautaro Scaglione" }],
-  creator: "Lautaro Scaglione",
-  publisher: "FRET GPS",
-  robots: "index, follow",
   openGraph: {
-    title: "FRET GPS - Programa de Guitarra Jazz con Lautaro Scaglione",
-    description: "Transforma tu improvisación con el sistema FRET GPS. 3 módulos progresivos para desarrollar tu voz única en el jazz.",
-    url: "https://fretgps.com",
-    siteName: "FRET GPS",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "FRET GPS - Programa de Guitarra Jazz",
-      },
-    ],
-    locale: "es_ES",
+    title: "Programa FRET GPS - Desarrolla tu Voz en la Improvisación",
+    description: "Para guitarristas intermedios que ya tocan escalas básicas pero quieren dejar de sonar repetitivos y crear su identidad musical única.",
     type: "website",
+    locale: "es_ES",
+    siteName: "Lautaro Scaglione - Programa FRET GPS",
   },
   twitter: {
     card: "summary_large_image",
-    title: "FRET GPS - Visualiza el Mástil e Improvisa con Fluidez",
-    description: "Programa completo de 3 módulos para dominar la improvisación en jazz con Lautaro Scaglione.",
-    images: ["/og-image.jpg"],
+    title: "Programa FRET GPS - Desarrolla tu Voz en la Improvisación",
+    description: "Para guitarristas intermedios que ya tocan escalas básicas pero quieren dejar de sonar repetitivos.",
   },
-  viewport: "width=device-width, initial-scale=1",
-  themeColor: "#d4af37",
-  manifest: "/manifest.json",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  other: {
+    "application-name": "Programa FRET GPS",
+    "apple-mobile-web-app-title": "FRET GPS - Lautaro Scaglione",
+    "format-detection": "telephone=no",
+  },
+  alternates: {
+    canonical: "https://lautaroscaglione.com",
+  },
 };
 
 export default function RootLayout({
@@ -55,12 +55,45 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <meta name="theme-color" content="#d4af37" />
+        
+        {/* Structured Data - JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Lautaro José Scaglione",
+              "jobTitle": "Profesor de Guitarra Jazz e Improvisación",
+              "description": "Graduado de EMPA, especializado en improvisación y desarrollo de identidad musical. Creador del método FRET GPS.",
+              "url": "https://lautaroscaglione.com",
+              "sameAs": [
+                "https://instagram.com/lautaroguitarra",
+                "https://youtube.com/@lautaroscaglione"
+              ],
+              "alumniOf": {
+                "@type": "EducationalOrganization",
+                "name": "EMPA - Escuela de Música Popular de Avellaneda"
+              },
+              "teaches": {
+                "@type": "Course",
+                "name": "Programa FRET GPS",
+                "description": "Programa para guitarristas intermedios que quieren desarrollar su voz única en la improvisación",
+                "provider": {
+                  "@type": "Person",
+                  "name": "Lautaro Scaglione"
+                }
+              }
+            })
+          }}
+        />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         {children}
       </body>
     </html>
