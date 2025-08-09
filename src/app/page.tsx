@@ -1,6 +1,6 @@
 'use client'
 
-// src/app/page.tsx - Versión corregida sin errores de comillas + Estética mejorada
+// src/app/page.tsx - Versión completa con sección de precios
 export default function Home() {
   return (
     <main>
@@ -77,7 +77,7 @@ export default function Home() {
               Agendar Evaluación Gratis
             </button>
             <button className="secondary-button" onClick={() => window.open('https://wa.me/541134060511?text=Hola%20Lautaro!%20Vengo%20de%20tu%20web%20y%20me%20interesa%20el%20programa%20FRET%20GPS.%20Soy%20guitarrista%20intermedio%20y%20quiero%20desarrollar%20mi%20propia%20voz%20en%20la%20improvisación.%20%C2%BFPodemos%20charlar?', '_blank')}>
-              Hablar por WhatsApp
+              Escribir por WhatsApp
             </button>
           </div>
         </div>
@@ -85,57 +85,53 @@ export default function Home() {
 
       <div className="section-divider"></div>
 
-      {/* About Section - MÁS PROFESIONAL */}
-      <section id="about" className="about-section">
+      {/* About Section - PROFESIONAL Y AUTÉNTICO */}
+      <section className="about-section" id="about">
         <div className="container">
           <div className="about-content">
             <div className="about-text">
-              <h2 className="section-title">Lautaro Scaglione</h2>
-              <div className="subtitle">Graduado EMPA • Especialista en Improvisación Jazz</div>
+              <div className="subtitle">Graduado EMPA • Especialista en Improvisación</div>
+              <h2 className="section-title">Desarrollá tu identidad musical única</h2>
               
               <div className="credentials">
                 <div className="credential-item">
                   <span className="credential-icon">🎓</span>
                   <div>
-                    <strong>Formación Profesional EMPA</strong>
-                    <p>Graduado de la Escuela de Música Popular de Avellaneda</p>
+                    <strong>Graduado EMPA</strong>
+                    <p>Formación profesional en la Escuela de Música Popular de Avellaneda, una de las instituciones más prestigiosas de Argentina.</p>
                   </div>
                 </div>
-                
+
                 <div className="credential-item">
                   <span className="credential-icon">🎸</span>
                   <div>
-                    <strong>Especialización en Jazz</strong>
-                    <p>Enfoque específico en improvisación y lenguaje jazzístico</p>
+                    <strong>Creador del Método FRET GPS</strong>
+                    <p>Sistema estructurado y probado para transformar guitarristas intermedios en improvisadores con voz propia.</p>
                   </div>
                 </div>
-                
+
                 <div className="credential-item">
-                  <span className="credential-icon">🎯</span>
+                  <span className="credential-icon">🎵</span>
                   <div>
-                    <strong>Método FRET GPS</strong>
-                    <p>Sistema propio para desarrollar la voz personal en la improvisación</p>
+                    <strong>Músico Activo</strong>
+                    <p>Presentaciones en vivo regulares que demuestran aplicación real del método en contextos musicales profesionales.</p>
                   </div>
                 </div>
               </div>
 
-              <p className="about-description">
-                Durante mis años de formación, descubrí que muchos guitarristas intermedios se quedaban &quot;atrapados&quot; en patrones repetitivos. Creé el programa FRET GPS para ayudarte a romper esas barreras y desarrollar tu identidad musical única.
-              </p>
+              <div className="about-description">
+                <p>No se trata de copiar a otros guitarristas. Mi método está diseñado para que encuentres TU voz única en la improvisación, aplicando conceptos reales de armonía funcional de manera práctica y musical.</p>
+              </div>
             </div>
-            
+
             <div className="about-visual">
               <div className="profile-image">
                 <div className="image-frame">
                   <img 
                     src="/images/laucha1.jpg" 
-                    alt="Lautaro Scaglione - Guitarrista y Profesor de Jazz"
-                    className="profile-photo"
+                    alt="Lautaro Scaglione tocando guitarra"
+                    style={{width: '100%', borderRadius: '15px'}}
                   />
-                  <div className="profile-info">
-                    <h3>Lautaro Scaglione</h3>
-                    <span>Graduado EMPA</span>
-                  </div>
                 </div>
               </div>
             </div>
@@ -145,99 +141,102 @@ export default function Home() {
 
       <div className="section-divider"></div>
 
-      {/* Para Quién Es Section - FILTRO CLARO */}
-      <section id="who-is-for" className="who-section">
+      {/* Method Section - 6 PILARES CLAROS */}
+      <section className="method-section" id="method">
+        <h2 className="section-title">🗺️ Los 6 Pilares del Método FRET GPS</h2>
+        <p className="section-subtitle">
+          Un sistema estructurado para llevarte del punto A (repetitivo) al punto B (voz propia)
+        </p>
+
+        <div className="method-grid">
+         <div className="method-card">
+            <div className="method-icon">📍</div>
+            <h3>Visualización del Mástil</h3>
+            <p>Dejá de tocar de memoria y empezá a ver el mástil con claridad. Entendé dónde estás parado en todo momento, sin importar la tonalidad.</p>
+          </div>
+
+           <div className="method-card">
+            <div className="method-icon">↻</div>
+            <h3>Movilidad Melódica</h3>
+            <p>¿Te quedás atrapado en una zona del mástil? Aprendé a moverte con libertad, conectando ideas de forma natural y fluida.</p>
+          </div>
+
+         <div className="method-card">
+            <div className="method-icon">♪</div>
+            <h3>Arpegios Funcionales</h3>
+            <p>No se trata solo de tocar notas, sino de contar algo con ellas. Explorá cómo improvisar con intención sobre cada parte del tema.</p>
+          </div>
+
+          <div className="method-card">
+            <div className="method-icon">♫</div>
+            <h3>Aplicación Real</h3>
+            <p>Llevá tu forma de tocar a un nuevo nivel, aplicando lo aprendido en canciones reales. De la teoría a la música.</p>
+          </div>
+
+        <div className="method-card">
+            <div className="method-icon">💡</div>
+            <h3>Construcción del Discurso</h3>
+            <p>Desarrollá frases, motivos, y cómo desarrollar tus ideas para que tu solo tenga una historia. Empezá a dejar tu huella personal.</p>
+          </div>
+
+         <div className="method-card">
+            <div className="method-icon">★</div>
+            <h3>Integración y Voz Propia</h3>
+            <p>El momento de unir todo. Elegí un repertorio desafiante, improvisá libremente, te escuchás con criterio y te preparás para presentarlo como un artista completo.</p>
+          </div>
+        </div>
+      </section>
+
+      <div className="section-divider"></div>
+
+      {/* Who Is For Section - FILTRADO CLARO */}
+      <section className="who-is-for-section" id="who-is-for">
         <div className="container">
-          <h2 className="section-title">¿Es FRET GPS Para Vos?</h2>
-          
-          <div className="who-grid">
-            <div className="who-card yes-card">
-              <div className="card-header">
-                <span className="icon">✅</span>
-                <h3>ESTO ES PARA VOS SI:</h3>
-              </div>
-              <ul className="who-list">
+          <h2 className="section-title">🎯 ¿Este programa es para vos?</h2>
+          <p className="section-subtitle">
+            Sé honesto: evaluá tu nivel actual para saber si es el momento indicado
+          </p>
+
+          <div className="target-grid">
+            <div className="target-card positive">
+              <h3>✅ SÍ es para vos si:</h3>
+              <ul>
                 <li>Ya tocas escalas pentatónicas básicas</li>
-                <li>Conoces algunos arpegios pero no sabes cuándo usarlos</li>
-                <li>Te frustras porque siempre improvisas lo mismo</li>
-                <li>Queres tocar standards de jazz con tu propia personalidad</li>
-                <li>Buscas desarrollar un sonido único y reconocible</li>
-                <li>Estas dispuesto a dedicar tiempo consistente al estudio</li>
+                <li>Conocés algunos arpegios pero no sabés cuándo usarlos</li>
+                <li>Te frustra que siempre improvisás lo mismo</li>
+                <li>Querés tocar standards de jazz con tu propia personalidad</li>
+                <li>Estás dispuesto a invertir en tu desarrollo musical</li>
+                <li>Podés comprometerte a practicar de forma consistente</li>
               </ul>
+              <div className="profile-label">GUITARRISTA INTERMEDIO SERIO</div>
             </div>
 
-            <div className="who-card no-card">
-              <div className="card-header">
-                <span className="icon">❌</span>
-                <h3>ESTO NO ES PARA VOS SI:</h3>
+            <div className="target-card negative">
+              <h3>❌ NO es para vos si:</h3>
+              <ul>
+                <li>Recién empezás a tocar guitarra</li>
+                <li>No sabés acordes básicos (mayores, menores, séptimas)</li>
+                <li>Buscás clases tradicionales de técnica</li>
+                <li>No te interesa la improvisación ni el jazz</li>
+                <li>Esperás resultados mágicos sin práctica</li>
+                <li>No podés invertir en formación de calidad</li>
+              </ul>
+              <div className="profile-label">MEJOR BUSCAR OTRO CAMINO</div>
+            </div>
+          </div>
+
+          <div className="transformation-preview">
+            <h3>🚀 La transformación que vas a experimentar:</h3>
+            <div className="before-after">
+              <div className="before">
+                <h4>ANTES (Punto A):</h4>
+                <p>Tocás sobre el que entras forma básica, conocés poca escala, limitado en registro medio, repetís siempre lo mismo con unos arpegios sin dominio.</p>
               </div>
-              <ul className="who-list">
-                <li>Recién empezas a tocar guitarra</li>
-                <li>No sabes acordes básicos (mayores, menores, dominantes)</li>
-                <li>Buscas clases tradicionales de técnica</li>
-                <li>Queres resultados &quot;mágicos&quot; sin práctica</li>
-                <li>No tenes interés específico en jazz e improvisación</li>
-                <li>Prefieres tocar solo covers exactos</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="clarity-message">
-            <h4>💡 El objetivo es claro:</h4>
-            <p>Llevarte desde &quot;toco escalas pero siempre sueno igual&quot; hacia &quot;tengo mi propia voz en la improvisación&quot;</p>
-          </div>
-        </div>
-      </section>
-
-      <div className="section-divider"></div>
-
-      {/* Method Section - 6 PILARES DEL PROGRAMA */}
-      <section id="method" className="method-section">
-        <div className="container">
-          <h2 className="section-title">Los 6 Pilares del Programa FRET GPS</h2>
-          <p className="section-subtitle">Un viaje estructurado hacia tu voz musical única</p>
-
-          <div className="method-grid">
-            <div className="method-card">
-              <div className="card-number">1</div>
-              <div className="card-icon">🎯</div>
-              <h3>Principios de Visualización del Diapasón</h3>
-              <p>Deja de tocar de memoria y empeza a ver el mástil con claridad. Te doy las herramientas para entender dónde estas parado en todo momento, sin importar la tonalidad.</p>
-            </div>
-
-            <div className="method-card">
-              <div className="card-number">2</div>
-              <div className="card-icon">🌊</div>
-              <h3>Movilidad Interna</h3>
-              <p>¿Te quedas atrapado en una zona del mástil? Aprendes a moverte con libertad, conectando ideas de forma natural y fluida. Vas a improvisar de verdad, no repetir fórmulas.</p>
-            </div>
-
-            <div className="method-card">
-              <div className="card-number">3</div>
-              <div className="card-icon">🎼</div>
-              <h3>Armonía Funcional y sus Arpegios</h3>
-              <p>Acá es donde todo cobra sentido. Entendes cómo se construye la música y cómo aplicarlo para expresarte mejor. Nada de tocar al azar: improvisas con notas que realmente dicen algo.</p>
-            </div>
-
-            <div className="method-card">
-              <div className="card-number">4</div>
-              <div className="card-icon">🎸</div>
-              <h3>Improvisación Contextualizada</h3>
-              <p>Llevas tu forma de tocar a un nuevo nivel, aplicando lo aprendido en canciones reales. Exploras cómo improvisar con intención sobre cada parte del tema.</p>
-            </div>
-
-            <div className="method-card">
-              <div className="card-number">5</div>
-              <div className="card-icon">📝</div>
-              <h3>Construcción del Discurso Musical</h3>
-              <p>No se trata solo de tocar notas, sino de contar algo con ellas. Trabajas frases, motivos, y cómo desarrollar tus ideas para que tu solo tenga una historia.</p>
-            </div>
-
-            <div className="method-card">
-              <div className="card-number">6</div>
-              <div className="card-icon">⭐</div>
-              <h3>Integración Creativa y Voz Propia</h3>
-              <p>Es el momento de unir todo. Elegis un repertorio desafiante, improvisas libremente, y lo preparas para presentarlo como un artista completo con tu identidad única.</p>
+              <div className="arrow">→</div>
+              <div className="after">
+                <h4>DESPUÉS (Punto B):</h4>
+                <p>Improvisás sobre progresiones complejas y estándares, dominás pentatónica, te reflejás en todo el mástil, utilizás recursos variados y musicales, visualizás armonía funcional completa, tenés tu propia voz improvisando.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -245,53 +244,165 @@ export default function Home() {
 
       <div className="section-divider"></div>
 
-      {/* Testimonials Section - PREPARADO PARA VIDEOS */}
-      <section id="testimonials" className="testimonials-section">
-        <div className="container">
-          <h2 className="section-title">Lo Que Dicen Mis Estudiantes</h2>
-          <p className="section-subtitle">Testimonios reales de guitarristas que transformaron su improvisación</p>
+      {/* Testimonials Section - PREPARADO PARA VIDEOS REALES */}
+      <section className="testimonials-section" id="testimonials">
+        <h2 className="section-title">🗣️ Lo que dicen mis estudiantes</h2>
+        <p className="section-subtitle">
+          Testimonios reales de guitarristas que transformaron su improvisación
+        </p>
 
-          <div className="testimonials-grid">
-            {/* Placeholder para cuando tengas los videos */}
-            <div className="testimonial-placeholder">
+        <div className="testimonials-grid">
+          {/* Testimonio 1 - Placeholder para video real */}
+          <div className="testimonial-card">
+            <div className="testimonial-video">
               <div className="video-placeholder">
-                <div className="play-button">▶</div>
-                <p>Video testimonial</p>
-              </div>
-              <div className="testimonial-info">
-                <h4>Martín R.</h4>
-                <p>&quot;Antes tocaba siempre los mismos licks. Ahora tengo mi propio sonido&quot;</p>
-                <small>Estudiante FRET GPS • 6 meses</small>
+                <span>📹</span>
+                <p>Video testimonio próximamente</p>
               </div>
             </div>
-
-            <div className="testimonial-placeholder">
-              <div className="video-placeholder">
-                <div className="play-button">▶</div>
-                <p>Video testimonial</p>
-              </div>
-              <div className="testimonial-info">
-                <h4>Carolina S.</h4>
-                <p>&quot;El programa me ayudó a entender la música, no solo a repetir patrones&quot;</p>
-                <small>Estudiante FRET GPS • 8 meses</small>
-              </div>
-            </div>
-
-            <div className="testimonial-placeholder">
-              <div className="video-placeholder">
-                <div className="play-button">▶</div>
-                <p>Video testimonial</p>
-              </div>
-              <div className="testimonial-info">
-                <h4>Diego M.</h4>
-                <p>&quot;Finalmente puedo improvisar con confianza en cualquier tonalidad&quot;</p>
+            <div className="testimonial-content">
+              <h4>Testimonio Real #1</h4>
+              <p>"Aquí irá el testimonio real en video de un estudiante que completó el programa FRET GPS."</p>
+              <div className="student-info">
+                <strong>Estudiante FRET GPS</strong>
                 <small>Estudiante FRET GPS • 4 meses</small>
               </div>
             </div>
           </div>
 
-          <div className="testimonials-note">
-            <p>📹 <strong>Videos testimoniales próximamente</strong> - Testimonios reales de YouTube + Instagram</p>
+          {/* Testimonio 2 - Placeholder para video real */}
+          <div className="testimonial-card">
+            <div className="testimonial-video">
+              <div className="video-placeholder">
+                <span>📹</span>
+                <p>Video testimonio próximamente</p>
+              </div>
+            </div>
+            <div className="testimonial-content">
+              <h4>Testimonio Real #2</h4>
+              <p>"Aquí irá el testimonio real en video de otro estudiante que transformó su improvisación."</p>
+              <div className="student-info">
+                <strong>Estudiante FRET GPS</strong>
+                <small>Estudiante FRET GPS • 4 meses</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="testimonials-note">
+          <p>📹 <strong>Videos testimoniales próximamente</strong> - Testimonios reales de YouTube + Instagram</p>
+        </div>
+      </section>
+
+      <div className="section-divider"></div>
+
+      {/* Pricing Section - NUEVA SECCIÓN */}
+      <section className="pricing-section">
+        <div className="container">
+          <h2 className="section-title">💰 Tu inversión para desarrollar tu voz musical única</h2>
+          <p className="section-subtitle">
+            Menos que dos clases presenciales por mes, pero con resultados 10 veces más focalizados
+          </p>
+
+          <div className="pricing-content">
+            {/* High Ticket - Programa Principal */}
+            <div className="pricing-card main-program">
+              <div className="pricing-header">
+                <h3>Programa FRET GPS Completo</h3>
+                <p className="program-subtitle">Transformación completa en 4 meses</p>
+              </div>
+
+              <div className="price-section">
+                <div className="price-comparison">
+                  <span className="old-price">Precio próximo: USD $800</span>
+                  <div className="current-price">
+                    <span className="currency">USD</span>
+                    <span className="amount">$500</span>
+                    <span className="period">(4 meses completos)</span>
+                  </div>
+                  <p className="monthly-equivalent">Equivale a USD $125/mes</p>
+                </div>
+              </div>
+
+              <div className="features-included">
+                <h4>🎯 Lo que incluye:</h4>
+                <ul>
+                  <li>✅ 16 sesiones 1 a 1 completamente personalizadas</li>
+                  <li>✅ Material específico diseñado para tu nivel actual</li>
+                  <li>✅ Plan paso a paso del punto A al punto B</li>
+                  <li>✅ Acceso directo para consultas vía WhatsApp</li>
+                  <li>✅ Grabaciones de todas las sesiones para repasar</li>
+                  <li>✅ Seguimiento personalizado de tu progreso</li>
+                </ul>
+              </div>
+
+              <div className="pricing-cta">
+                <button 
+                  className="cta-button large" 
+                  onClick={() => window.open('https://calendly.com/lautaroguitarra/sesion-de-claridad', '_blank')}
+                >
+                  Agendar Evaluación Gratuita
+                </button>
+                <p className="urgency-note">
+                  ⚠️ <strong>El precio sube a USD $800 el próximo mes</strong> por demanda genuina y para mantener calidad con menos alumnos
+                </p>
+              </div>
+            </div>
+
+            {/* Low Ticket - Mini Workshops */}
+            <div className="pricing-card workshop-card">
+              <div className="pricing-header">
+                <h3>Mini Workshops</h3>
+                <p className="program-subtitle">Primeros pasos hacia tu libertad musical</p>
+                <span className="coming-soon">Próximamente</span>
+              </div>
+
+              <div className="price-section">
+                <div className="current-price">
+                  <span className="currency">USD</span>
+                  <span className="amount">$60-80</span>
+                  <span className="period">(Una sola vez)</span>
+                </div>
+              </div>
+
+              <div className="features-included">
+                <h4>🎥 Lo que incluirá:</h4>
+                <ul>
+                  <li>✅ Videos grabados de alta calidad</li>
+                  <li>✅ Ejercicios específicos para cada nivel</li>
+                  <li>✅ Material de apoyo descargable</li>
+                  <li>✅ Acceso de por vida</li>
+                </ul>
+              </div>
+
+              <div className="pricing-cta">
+                <button className="secondary-button large disabled">
+                  Reservar lugar (Próximamente)
+                </button>
+                <p className="workshop-note">
+                  💡 Perfecto para probar el método antes del programa completo
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="value-proposition">
+            <div className="comparison-box">
+              <h4>📊 ¿Por qué es una excelente inversión?</h4>
+              <div className="comparison-grid">
+                <div className="comparison-item">
+                  <strong>Clases tradicionales presenciales:</strong>
+                  <p>USD $40-60 por clase × 16 clases = USD $640-960</p>
+                  <span className="comparison-note">Sin plan estructurado ni seguimiento</span>
+                </div>
+                <div className="vs">VS</div>
+                <div className="comparison-item highlight">
+                  <strong>Programa FRET GPS:</strong>
+                  <p>USD $500 por transformación completa</p>
+                  <span className="comparison-note">Plan específico + seguimiento + resultados garantizados</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -345,25 +456,23 @@ export default function Home() {
       {/* Footer */}
       <footer className="footer">
         <div style={{textAlign: 'center'}}>
-          <p>© 2025 Lautaro Scaglione. Todos los derechos reservados. | Formación EMPA Certificada</p>
-          <p style={{fontSize: '0.9rem', opacity: 0.8, marginTop: '0.5rem'}}>
-            &quot;No se trata de tocar notas correctas, se trata de encontrar TU manera de contarle algo al mundo con la guitarra.&quot;
+          <p>© 2025 Lautaro Scaglione. Todos los derechos reservados.</p>
+          <p style={{marginTop: '1rem', opacity: 0.7}}>
+            Guitarrista graduado EMPA • Especialista en Improvisación • Creador del Método FRET GPS
           </p>
         </div>
       </footer>
 
-      {/* WhatsApp Float Button - CONECTADO */}
-      <a
-        href="https://wa.me/541134060511?text=Hola%20Lautaro!%20Vengo%20de%20tu%20web%20y%20me%20interesa%20el%20programa%20FRET%20GPS.%20Soy%20guitarrista%20intermedio%20y%20quiero%20desarrollar%20mi%20propia%20voz%20en%20la%20improvisación.%20%C2%BFPodemos%20charlar?"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="whatsapp-float"
-        aria-label="Contactar por WhatsApp"
-      >
-        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.89 3.515"/>
-        </svg>
-      </a>
+    {/* WhatsApp Floating Button - VERSIÓN CORREGIDA */}
+      <div className="whatsapp-float">
+        <button 
+          className="whatsapp-button"
+          onClick={() => window.open('https://wa.me/541134060511?text=Hola%20Lautaro!%20Vengo%20de%20tu%20web%20y%20me%20interesa%20el%20programa%20FRET%20GPS.%20Soy%20guitarrista%20intermedio%20y%20quiero%20desarrollar%20mi%20propia%20voz%20en%20la%20improvisación.%20%C2%BFPodemos%20charlar?', '_blank')}
+          title="Escribir por WhatsApp"
+        >
+          📱
+        </button>
+      </div>
     </main>
   )
 }

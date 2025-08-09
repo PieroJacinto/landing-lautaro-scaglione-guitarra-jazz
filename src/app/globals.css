@@ -456,20 +456,22 @@ body {
 
 /* SECCIÓN ABOUT MEJORADA */
 .about-section {
-  padding: 5rem 0;
+  padding: 5rem 2rem; /* Más padding lateral */
   background: rgba(42, 63, 95, 0.3);
   backdrop-filter: blur(10px);
   border-radius: 20px;
-  margin: 2rem;
+  margin: 2rem 1rem; /* Menos margen lateral */
+  overflow: visible; /* No recortar contenido */
 }
 
 .about-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 3rem;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-
 .about-text .subtitle {
   color: var(--accent-blue);
   font-size: 1.1rem;
@@ -521,39 +523,51 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2rem; /* Espacio para que no se recorte */
+  overflow: visible; /* Permitir que se vea completa */
 }
 
 .profile-image {
   width: 100%;
   max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 1. FIX FOTO - SIN CUADRO, SOLO CÍRCULO */
+.image-frame {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 1rem !important; /* Padding para evitar recorte */
+  box-shadow: none !important;
+  position: relative;
+  overflow: visible !important; /* Importante: no recortar */
+  min-height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-.image-frame {
-  background: var(--gradient-primary);
-  border-radius: 20px;
-  padding: 2rem;
-  text-align: center;
-  box-shadow: var(--box-shadow-strong);
-  border: 3px solid var(--accent-gold);
-  position: relative;
-  overflow: hidden;
-  min-height: 350px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+.image-frame img {
+  width: 280px !important;
+  height: 280px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 4px solid var(--accent-gold) !important;
+  box-shadow: 0 12px 40px rgba(212, 175, 55, 0.4) !important;
+  transition: all 0.3s ease !important;
+  flex-shrink: 0; /* No reducir tamaño */
+}
+
+.image-frame img:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 16px 50px rgba(212, 175, 55, 0.6) !important;
 }
 
 .image-frame::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: conic-gradient(from 0deg, transparent, rgba(212, 175, 55, 0.1), transparent, rgba(212, 175, 55, 0.1), transparent);
-  animation: rotate 20s linear infinite;
-  z-index: -1;
+  display: none !important; /* Eliminar animación rotatoria */
 }
 
 @keyframes rotate {
@@ -706,23 +720,42 @@ body {
   margin: 2rem;
 }
 
+/* 2. FIX CARDS - DISTRIBUCIÓN UNIFORME */
 .method-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
   gap: 2rem;
   margin-top: 3rem;
+  justify-items: center; /* Centrar cards */
+  align-items: stretch; /* Misma altura */
 }
 
 .method-card {
   background: rgba(26, 37, 55, 0.8);
   border-radius: 20px;
-  padding: 2.5rem;
+  padding: 2rem;
   border: 2px solid rgba(212, 175, 55, 0.3);
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
+  width: 100%; /* Ancho completo */
+  max-width: 350px; /* Máximo ancho */
+  min-height: 280px; /* Altura mínima uniforme */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+/* Segunda fila con 3 cards centradas */
+.method-grid .method-card:nth-child(4),
+.method-grid .method-card:nth-child(5),
+.method-grid .method-card:nth-child(6) {
+  grid-row: 2;
+}
+
+.method-grid .method-card:nth-child(4) { grid-column: 1; }
+.method-grid .method-card:nth-child(5) { grid-column: 2; }
+.method-grid .method-card:nth-child(6) { grid-column: 3; }
 
 .method-card::before {
   content: '';
@@ -1080,5 +1113,711 @@ body {
     right: 20px;
     width: 50px;
     height: 50px;
+  }
+}
+/* SECCIÓN DE PRECIOS - PROFESIONAL Y CLARA */
+.pricing-section {
+  padding: 5rem 2rem; /* Más padding lateral */
+  background: rgba(42, 63, 95, 0.2);
+  backdrop-filter: blur(10px);
+  margin: 2rem 1rem; /* Menos margen lateral */
+  border-radius: 20px;
+  overflow: visible;
+}
+
+.pricing-content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr; /* Más equilibrado */
+  gap: 2rem;
+  max-width: 1000px; /* Reducir ancho máximo */
+  margin: 0 auto;
+  align-items: start; /* Alinear arriba */
+}
+
+.pricing-card {
+  background: rgba(26, 37, 55, 0.8);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 2rem; /* Reducir padding */
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  height: fit-content; /* Altura automática */
+}
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
+  border-color: var(--accent-gold);
+}
+
+.main-program {
+  min-height: 500px; /* Altura mínima */
+}
+
+.main-program::before {
+  content: '⭐ RECOMENDADO';
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent-gold);
+  color: var(--primary-jazz);
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.workshop-card {
+  min-height: 400px; /* Altura menor para workshop */
+  opacity: 0.8;
+}
+
+.coming-soon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(139, 21, 56, 0.9);
+  color: var(--off-white);
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.pricing-header h3 {
+  font-family: var(--heading-font);
+  font-size: 2rem;
+  color: var(--accent-gold);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.program-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.price-section {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.price-comparison {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: var(--text-muted);
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.current-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.currency {
+  font-size: 1.2rem;
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+
+.amount {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--off-white);
+  font-family: var(--heading-font);
+}
+
+.period {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-left: 0.5rem;
+}
+
+.monthly-equivalent {
+  color: var(--accent-blue);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.features-included {
+  margin: 2rem 0;
+}
+
+.features-included h4 {
+  color: var(--accent-gold);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.features-included ul {
+  list-style: none;
+  padding: 0;
+}
+
+.features-included li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.features-included li:last-child {
+  border-bottom: none;
+}
+
+.pricing-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.urgency-note {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(139, 21, 56, 0.2);
+  border-radius: 10px;
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  border-left: 4px solid #ff6b6b;
+}
+
+.workshop-note {
+  margin-top: 1rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* VALUE PROPOSITION */
+.value-proposition {
+  margin-top: 4rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comparison-box {
+  background: rgba(26, 37, 55, 0.6);
+  border-radius: 15px;
+  padding: 2rem;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.comparison-box h4 {
+  text-align: center;
+  color: var(--accent-gold);
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.comparison-item {
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.comparison-item:first-child {
+  background: rgba(139, 21, 56, 0.2);
+  border: 1px solid rgba(139, 21, 56, 0.3);
+}
+
+.comparison-item.highlight {
+  background: rgba(39, 174, 96, 0.2);
+  border: 1px solid rgba(39, 174, 96, 0.4);
+}
+
+.comparison-item strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.comparison-item p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  font-weight: 600;
+}
+
+.comparison-note {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+.vs {
+  background: var(--accent-gold);
+  color: var(--primary-jazz);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 0 auto;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .about-visual {
+    order: -1; /* Foto arriba en mobile */
+    padding: 1rem;
+  }
+  
+  .image-frame img {
+    width: 220px !important;
+    height: 220px !important;
+  }
+  .pricing-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: none;
+    padding: 0 1rem;
+  }
+  
+  .pricing-card {
+    padding: 1.5rem;
+    min-height: auto;
+  }
+  
+  .amount {
+    font-size: 2.5rem;
+  }
+  
+  .comparison-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .vs {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-frame {
+    padding: 0.5rem !important;
+  }
+  
+  .image-frame img {
+    width: 180px !important;
+    height: 180px !important;
+  }
+  
+  .about-visual {
+    padding: 0.5rem;
+  }
+  .pricing-section {
+    padding: 3rem 0;
+  }
+  
+  .pricing-card {
+    padding: 1.5rem;
+  }
+  
+  .amount {
+    font-size: 2rem;
+  }
+  
+  .features-included li {
+    font-size: 0.9rem;
+  }
+}
+/* CLASES FALTANTES - AGREGAR AL FINAL DEL globals.css */
+
+/* Sección Para Quién Es - FALTANTE */
+.who-is-for-section {
+  padding: 5rem 0;
+}
+
+.target-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.target-card {
+  background: rgba(26, 37, 55, 0.6);
+  border-radius: 20px;
+  padding: 2.5rem;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.target-card.positive {
+  border-color: #22c55e;
+  background: rgba(34, 197, 94, 0.1);
+}
+
+.target-card.negative {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.target-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-strong);
+}
+
+.target-card h3 {
+  font-family: var(--heading-font);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--off-white);
+}
+
+.target-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.target-card li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.target-card li:last-child {
+  border-bottom: none;
+}
+
+.profile-label {
+  background: var(--accent-gold);
+  color: var(--primary-jazz);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.transformation-preview {
+  margin-top: 4rem;
+  background: rgba(26, 37, 55, 0.4);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid var(--accent-gold);
+}
+
+.transformation-preview h3 {
+  color: var(--accent-gold);
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.before-after {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.before, .after {
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.before {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.after {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.before h4, .after h4 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.arrow {
+  background: var(--accent-gold);
+  color: var(--primary-jazz);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 0 auto;
+}
+
+/* Testimonios mejorados - FALTANTE */
+.testimonial-card {
+  background: rgba(26, 37, 55, 0.6);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 2px solid var(--accent-blue);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-strong);
+  border-color: var(--accent-gold);
+}
+
+.testimonial-video {
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-content h4 {
+  color: var(--accent-gold);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.testimonial-content p {
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.student-info {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+}
+
+.student-info strong {
+  color: var(--accent-gold);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.student-info small {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* WhatsApp Button - FALTANTE */
+.whatsapp-button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive para secciones nuevas */
+@media (max-width: 768px) {
+  .target-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .before-after {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    transform: rotate(90deg);
+  }
+  
+  .target-card {
+    padding: 2rem;
+  }
+}
+/* CORRECCIONES ESPECÍFICAS - AGREGAR AL FINAL DEL globals.css */
+
+/* 1. FIX PARA LA FOTO MAL CENTRADA */
+.image-frame {
+  background: var(--gradient-primary);
+  border-radius: 20px;
+  padding: 1rem; /* Reducimos padding */
+  text-align: center;
+  box-shadow: var(--box-shadow-strong);
+  border: 3px solid var(--accent-gold);
+  position: relative;
+  overflow: hidden;
+  min-height: 300px; /* Reducimos altura mínima */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centramos verticalmente */
+  align-items: center;
+}
+
+.image-frame img {
+  width: 300px !important;
+  height: 300px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 4px solid var(--accent-gold) !important;
+  box-shadow: 0 12px 40px rgba(212, 175, 55, 0.4) !important;
+  transition: all 0.3s ease !important;
+}
+.image-frame img:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 16px 50px rgba(212, 175, 55, 0.6) !important;
+}
+
+
+/* 2. FIX PARA ÍCONOS - FORZAR EMOJIS */
+.method-icon {
+  font-size: 3rem !important;
+  margin-bottom: 1.2rem;
+  display: block;
+  text-align: center;
+  line-height: 1;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif !important;
+  color: var(--accent-gold);
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.3));
+}
+
+.credential-icon {
+  font-size: 2rem !important;
+  margin-top: 0.2rem;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif !important;
+  color: var(--accent-gold);
+}
+
+/* 3. FIX WHATSAPP BUTTON - ÍCONO CORRECTO */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #25d366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.whatsapp-button {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0; /* Ocultar texto */
+}
+
+/* SVG del ícono WhatsApp real */
+.whatsapp-button::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.516'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+}c
+
+/* 4. FIX PARA ÍCONOS EN TARGET CARDS */
+.target-card h3 {
+  font-family: var(--heading-font);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--off-white);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.target-card h3::first-letter {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif !important;
+  font-size: 1.5rem;
+}/* 5. RESPONSIVE PARA CARDS */
+@media (max-width: 1200px) {
+  .method-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .method-grid .method-card:nth-child(4) { grid-column: 1; grid-row: 3; }
+  .method-grid .method-card:nth-child(5) { grid-column: 2; grid-row: 3; }
+  .method-grid .method-card:nth-child(6) { grid-column: 1 / span 2; grid-row: 4; justify-self: center; }
+}
+
+@media (max-width: 768px) {
+  .method-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .method-card {
+    max-width: none;
+    min-height: 250px;
+  }
+  
+  .image-frame img {
+    width: 250px !important;
+    height: 250px !important;
   }
 }
